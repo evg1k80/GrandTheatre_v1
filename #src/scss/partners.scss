@@ -1,0 +1,48 @@
+
+.partners {
+    @include adaptiv-value ("padding-bottom", 120, 30, 1);
+	&__title {
+        @include adaptiv-value ("margin-bottom", 100, 20, 1);
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 96px;
+        @include adaptiv-value ("column-gap", 78, 40, 1);
+        @include adaptiv-value ("row-gap", 80, 40, 1);
+        @media (max-width: $md2+px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: $md3+px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+	&__item {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(#333, 0.5);
+            z-index: 5;
+            transition: background-color 0.3s ease 0s;
+        }
+        img {
+            align-self: center;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    background-color: transparent;
+                }
+            }
+        }
+    }		
+}
+
