@@ -3,35 +3,73 @@
     position: fixed;
     width: 150px;
     height: 100vh;
-    
-    overflow: auto;
     top: 0;
     left: 0;
     z-index: 51;
     background-color: rgba(#333, 0.75);
-    // transition: transform, width 0.3s ease 0s;
+    transition: transform 0.3s ease 0s;
+    &._active {
+        transform: translateX(0);
+    }
     
     
     @media (max-width: 1500px) {
         width: 60px;
     }
     @media (max-width: 1300px) {
-        background-color: transparent;
+        transform: translateX(-100%);
+        background-color: rgba(#333, 1);
+    }
+    &__btn {
+        display: none;
+        transition: transform 0.3s ease 0s;
+        &._active {
+            @media (min-height: 700px) {
+                transform: translateX(-45px);
+            }
+            
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+        @media (max-width: 1300px) {
+            position: absolute;
+            right: -30px;
+            top: 130px;
+            z-index: 1000;
+            background-color: $colorGold;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+            path {
+                fill: $colorWhite; 
+            }
+        } 
     }
         
     &__body {
         z-index: 100;
+        position: relative;
         width: 100%;
         height: 100%;
-        min-height: 700px;
+        // min-height: 700px;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
         padding: 0 0 86px 0;
-        @media (max-width: 1300px) {
+        @media (max-width: 1300px), (max-height:700px) {
             justify-content: center;
+            padding: 0;
+            
+            
         }
     }
     &__title {
@@ -44,7 +82,7 @@
         position: relative;
         display: block;
         word-break: none;
-        @media (max-width: 1300px) {
+        @media (max-width: 1300px), (max-height:700px) {
             display: none;
         }
     }
@@ -54,7 +92,7 @@
         background-color: $colorLightGray;
         margin: 40px 0;
         display: inline-block;
-        @media (max-width: 1300px) {
+        @media (max-width: 1300px), (max-height:700px)  {
             display: none;
         }
     }  

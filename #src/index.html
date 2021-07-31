@@ -7,6 +7,7 @@
 <body>
 	<div class="wrapper">
 		@@include('_header.html',{})
+		@@include('_sidebar.html',{})
 
 		
 
@@ -208,7 +209,7 @@
 							<div class="form__top">
 								<div class="form__column form__column--lg">
 									<div class="form__line">
-										<input autocomplete="off" type="text" name="form[]" data-error="ошибка"
+										<input autocomplete="off" type="text" name="form[]" data-error=""
 											data-value="Имя" class="form__input _req">
 									</div>
 									<div class="form__line">
@@ -216,11 +217,11 @@
 											class="form__input">
 									</div>
 									<div class="form__line">
-										<input autocomplete="off" type="text" name="form[]" data-error="ошибка"
+										<input autocomplete="off" type="text" name="form[]" data-error=""
 											data-value="Телефон" class="form__input _req _phone">
 									</div>
 									<div class="form__line">
-										<input autocomplete="off" type="text" name="form[]" data-error="ошибка"
+										<input autocomplete="off" type="text" name="form[]" data-error=""
 											data-value="E-mail" class="form__input _req info-contacts__email">
 									</div>
 								</div>
@@ -244,15 +245,10 @@
 
 
 
-			<!-- кнопка с волнами
-			<a href="#" class="wave-btn">
-				<span class="wave-btn__text">Кнопка</span>
-				<span class="wave-btn__waves"></span>
-			</a> -->
+			
 		</main>
 		@@include('_footer.html',{})
 	</div>
-	@@include('_popup.html',{})
 	@@include('_js.html',{})
 </body>
 

@@ -129,7 +129,6 @@
 		margin: 0 5px;
 		padding: 5px 0;
 		@media (max-width: $md3 + px) {
-			// display: inline-block;
 			margin: 0 0 20px 0;
 			&:last-child {
 				margin: 0;
@@ -142,7 +141,7 @@
 		color: inherit;
 		text-transform: uppercase;
 		padding: 0 0 5px 0;
-		transition: all 0.3s;
+		transition: color 0.3s;
 		position: relative;
 		&::after {
 			content: '';
@@ -152,7 +151,7 @@
 			background-color: $colorGold;
 			left: 50%;
 			bottom: 0;
-			transition: all 0.3s;
+			transition: all 0.3s ease 0s;
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -163,7 +162,13 @@
 				}
 			}
 		}
-		
+		&._active {
+			color: $colorGray;
+			&::after {
+				width: 100%;
+				left: 0;
+			}
+		}
 	}
 }
 
