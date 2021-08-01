@@ -170,10 +170,10 @@ function fonts_otf() {
 		.pipe(gulp.dest('./' + src_folder + '/fonts/'));
 }
 function fonts() {
-	src(path.src.fonts)
-		.pipe(plumber())
-		.pipe(ttf2woff())
-		.pipe(dest(path.build.fonts));
+	// src(path.src.fonts)
+	// 	.pipe(plumber())
+	// 	.pipe(ttf2woff())
+	// 	.pipe(dest(path.build.fonts));
 	return src(path.src.fonts)
 		.pipe(ttf2woff2())
 		.pipe(dest(path.build.fonts))
