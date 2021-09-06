@@ -82,11 +82,19 @@
     &__body {
         margin: 0 0 35px 0;
         box-shadow: 10px 10px 5px rgba($colorGold, 0.3);
+        transition: box-shadow 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 20px 20px 5px rgba($colorGray, 0.3);
+            }
+        }
         
     }
     
     &__image {
+        display: block;
         min-height: 490px;
+        
         @media (max-width: $md4+px) {
             min-height: 400px;
         } 
